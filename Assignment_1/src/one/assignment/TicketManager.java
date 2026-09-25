@@ -58,6 +58,16 @@ public class TicketManager {
 		
 	}
 	
+	void printAll()
+	{
+		ticketBook.printAll();
+	}
+	
+	void printForEvent(Event event)
+	{
+		ticketBook.printForEvent(event);
+	}
+	
 	public TicketManager(int ticketCount)
 	{
 		this.ticketBook = new TicketBook(ticketCount);

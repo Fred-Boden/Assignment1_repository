@@ -20,11 +20,8 @@ public class Main {
 		
 		ticketManager.admitTicket(3);
 		
-		//Add stuff for printAll and printEvent. I don't think this implementation is right
-		/*
-		 * ticketManager.ticketBook.printAll();
-		 * ticketManager.ticketBook.printEvent(cyberLecture);
-		 */
+		ticketManager.printAll();
+		ticketManager.printForEvent(cyberLecture);
 
 	}
 
