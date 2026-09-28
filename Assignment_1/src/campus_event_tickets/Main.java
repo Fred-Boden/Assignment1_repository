@@ -20,7 +20,12 @@ public class Main {
 		
 		ticketManager.admitTicket(3);
 		
+		System.out.println("PRINT ALL:");	
 		ticketManager.printAll();
+		System.out.println();
+		System.out.println();
+		System.out.println("PRINT FOR CYBER LECTURE");
+		
 		ticketManager.printForEvent(cyberLecture);
 
 	}
