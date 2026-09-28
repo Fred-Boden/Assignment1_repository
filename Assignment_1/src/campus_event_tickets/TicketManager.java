@@ -1,7 +1,7 @@
 package campus_event_tickets;
 
 public class TicketManager {
-	public TicketBook ticketBook;
+	private TicketBook ticketBook;
 	private int idCounter;
 	
 	boolean createTicket(Event event, TicketType type, String studentName)
