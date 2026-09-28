@@ -3,74 +3,61 @@ package campus_event_tickets;
 public class TicketManager {
 	private TicketBook ticketBook;
 	private int idCounter;
-	
-	public TicketManager(int ticketCount)
-	{
+
+	public TicketManager(int ticketCount) {
 		this.ticketBook = new TicketBook(ticketCount);
 		idCounter = 1;
 	}
-	
-	public boolean createTicket(Event event, TicketType type, String studentName)
-	{
-		try
-		{
+
+	public boolean createTicket(Event event, TicketType type, String studentName) {
+		try {
 			ticketBook.createTicket(idCounter, event, type, studentName);
-			
+
 			idCounter++;
 			return true;
-		} catch(IllegalArgumentException e)
-		{
+		} catch (IllegalArgumentException e) {
 			return false;
 		}
 	}
-	
-	//Add try/catch for ticket.cancel and admit in case try to admit canceled and vice versa
-	public boolean cancelTicket(int id)
-	{
+
+	// Add try/catch for ticket.cancel and admit in case try to admit canceled and
+	// vice versa
+	public boolean cancelTicket(int id) {
 		Ticket targetTicket = ticketBook.findById(id);
-		if(targetTicket == null)
-		{
+		if (targetTicket == null) {
 			return false;
 		}
-		try
-		{
+		try {
 			targetTicket.cancel();
-			
+
 			return true;
-			
-		} catch(IllegalArgumentException e)
-		{
+
+		} catch (IllegalArgumentException e) {
 			return false;
 		}
-		
+
 	}
-	
-	public boolean admitTicket(int id)
-	{
+
+	public boolean admitTicket(int id) {
 		Ticket targetTicket = ticketBook.findById(id);
-		if(targetTicket == null)
-		{
+		if (targetTicket == null) {
 			return false;
 		}
-		
-		try
-		{
+
+		try {
 			targetTicket.admit();
 			return true;
-		} catch(IllegalArgumentException e)
-		{
+		} catch (IllegalArgumentException e) {
 			return false;
 		}
-		
+
 	}
-	
-	public void printAll()
-	{
+
+	public void printAll() {
 		ticketBook.printAll();
 	}
-	
-	public void printForEvent(Event event)
-	{
+
+	public void printForEvent(Event event) {
 		ticketBook.printForEvent(event);
 	}
 }
