@@ -27,15 +27,8 @@ public class TicketManager {
 		if (targetTicket == null) {
 			return false;
 		}
-		try {
-			targetTicket.cancel();
 
-			return true;
-
-		} catch (IllegalArgumentException e) {
-			return false;
-		}
-
+		return targetTicket.cancel();
 	}
 
 	public boolean admitTicket(int id) {
@@ -44,13 +37,7 @@ public class TicketManager {
 			return false;
 		}
 
-		try {
-			targetTicket.admit();
-			return true;
-		} catch (IllegalArgumentException e) {
-			return false;
-		}
-
+		return targetTicket.admit();
 	}
 
 	public void printAll() {
