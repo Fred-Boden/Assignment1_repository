@@ -12,7 +12,7 @@ public class TicketManager {
 			
 			idCounter++;
 			return true;
-		} catch(IllegalStateException e)
+		} catch(IllegalArgumentException e)
 		{
 			return false;
 		}
@@ -32,7 +32,7 @@ public class TicketManager {
 			
 			return true;
 			
-		} catch(IllegalStateException e)
+		} catch(IllegalArgumentException e)
 		{
 			return false;
 		}
@@ -51,7 +51,7 @@ public class TicketManager {
 		{
 			targetTicket.admit();
 			return true;
-		} catch(IllegalStateException e)
+		} catch(IllegalArgumentException e)
 		{
 			return false;
 		}
