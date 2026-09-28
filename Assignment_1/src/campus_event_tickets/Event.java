@@ -1,9 +1,31 @@
 package campus_event_tickets;
 
 public class Event {
-
-	public Event() {
-		// TODO Auto-generated constructor stub
+	private final String name;
+	private final String location;
+	
+	public Event(String name, String location) {
+		if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Event name cannot be null or blank.");
+        }
+        if (location == null || location.isBlank()) {
+            throw new IllegalArgumentException("Event location cannot be null or blank.");
+        }
+		
+		this.name = name;
+		this.location = location;
 	}
 
+	public String getName() {
+		return this.name;
+	}
+	
+	public String getLocation() {
+		return this.location;
+	}
+	
+	@Override
+	public String toString( ) {
+		return name + " @ " + location;
+	}
 }
