@@ -2,8 +2,8 @@ package campus_event_tickets;
 
 public class TicketType {
 	
-	private String name;
-	private double price;
+	private final String name;
+	private final double price;
 
 	public TicketType(String name, double price) {
 		if (name == null || name.isBlank()) { throw new IllegalArgumentException("NAME ERROR: Name cannot be null nor blank!"); }

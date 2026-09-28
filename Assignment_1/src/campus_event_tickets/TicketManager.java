@@ -17,8 +17,6 @@ public class TicketManager {
 		return created;
 	}
 
-	// Add try/catch for ticket.cancel and admit in case try to admit canceled and
-	// vice versa
 	public boolean cancelTicket(int id) {
 		Ticket targetTicket = ticketBook.findById(id);
 		if (targetTicket == null) {

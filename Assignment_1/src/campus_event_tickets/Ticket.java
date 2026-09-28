@@ -2,10 +2,10 @@ package campus_event_tickets;
 
 public class Ticket {
 
-	private int id;
-	private Event event;
-	private TicketType ticketType;
-	private String studentName;
+	private final int id;
+	private final Event event;
+	private final TicketType ticketType;
+	private final String studentName;
 	private boolean canceled;
 	private boolean admitted;
 	
