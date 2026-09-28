@@ -4,7 +4,13 @@ public class TicketManager {
 	private TicketBook ticketBook;
 	private int idCounter;
 	
-	boolean createTicket(Event event, TicketType type, String studentName)
+	public TicketManager(int ticketCount)
+	{
+		this.ticketBook = new TicketBook(ticketCount);
+		idCounter = 1;
+	}
+	
+	public boolean createTicket(Event event, TicketType type, String studentName)
 	{
 		try
 		{
@@ -19,7 +25,7 @@ public class TicketManager {
 	}
 	
 	//Add try/catch for ticket.cancel and admit in case try to admit canceled and vice versa
-	boolean cancelTicket(int id)
+	public boolean cancelTicket(int id)
 	{
 		Ticket targetTicket = ticketBook.findById(id);
 		if(targetTicket == null)
@@ -39,7 +45,7 @@ public class TicketManager {
 		
 	}
 	
-	boolean admitTicket(int id)
+	public boolean admitTicket(int id)
 	{
 		Ticket targetTicket = ticketBook.findById(id);
 		if(targetTicket == null)
@@ -58,20 +64,13 @@ public class TicketManager {
 		
 	}
 	
-	void printAll()
+	public void printAll()
 	{
 		ticketBook.printAll();
 	}
 	
-	void printForEvent(Event event)
+	public void printForEvent(Event event)
 	{
 		ticketBook.printForEvent(event);
 	}
-	
-	public TicketManager(int ticketCount)
-	{
-		this.ticketBook = new TicketBook(ticketCount);
-		idCounter = 1;
-	}
-
 }
