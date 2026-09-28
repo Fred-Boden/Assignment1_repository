@@ -26,7 +26,7 @@ public class TicketBook {
     
     public Ticket findById(int id) {
     	for(int i = 0; i < count; i++) {
-    		if(tickets[i].getID() == id)
+    		if(tickets[i].getId() == id)
     			return tickets[i];
     	}
     	
