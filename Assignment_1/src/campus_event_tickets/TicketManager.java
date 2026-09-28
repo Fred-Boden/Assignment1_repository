@@ -10,14 +10,11 @@ public class TicketManager {
 	}
 
 	public boolean createTicket(Event event, TicketType type, String studentName) {
-		try {
-			ticketBook.createTicket(idCounter, event, type, studentName);
-
+		boolean created = ticketBook.createTicket(idCounter, event, type, studentName);
+		if (created) {
 			idCounter++;
-			return true;
-		} catch (IllegalArgumentException e) {
-			return false;
 		}
+		return created;
 	}
 
 	// Add try/catch for ticket.cancel and admit in case try to admit canceled and
