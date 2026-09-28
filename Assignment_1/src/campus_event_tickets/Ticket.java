@@ -50,6 +50,6 @@ public class Ticket {
 	
 	@Override
 	public String toString() {
-		return "Ticket ID: " + id + "\nStudent: " + studentName + "\nEvent: " + event + "\nType: " + ticketType + "\nActive Status: " + isActive();
+		return "Ticket ID: " + id + "\nStudent: " + studentName + "\nEvent: " + event + "\nType: " + ticketType + "\nActive Status: " + isActive() + "\n";
 	}
 }
